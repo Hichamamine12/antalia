@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Tadbir Al Mohassaba</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet"/>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Outfit', sans-serif;
+            background: #f4f6f9;
+        }
+
+        .app-container {
+            display: flex;
+            height: 100vh;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 260px;
+            background: #0d1b2a;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-container {
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 1px solid #1b263b;
+        }
+
+        .logo-icon {
+            font-size: 30px;
+            color: #4cc9f0;
+        }
+
+        .nav-menu, .nav-footer {
+            padding: 10px;
+        }
+
+        .nav-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px;
+            color: #cbd5e1;
+            text-decoration: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .nav-item:hover,
+        .nav-item.active {
+            background: #1b263b;
+            color: #fff;
+        }
+
+        /* Main */
+        .main-content {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .page {
+            display: none;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        h2 {
+            margin-top: 0;
+        }
+
+        /* Simple cards */
+        .card {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,.05);
+        }
+
+        .btn {
+            background: #4cc9f0;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="app-container">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="logo-container">
+            <div class="logo-icon"><i class="ri-pie-chart-2-fill"></i></div>
+            <div>
+                <strong>TADBIR</strong><br>
+                <small>AL MOHASSABA</small>
+            </div>
+        </div>
+
+        <nav class="nav-menu">
+            <div class="nav-item active" data-page="dashboard">
+                <i class="ri-dashboard-line"></i> Tableau de bord
+            </div>
+            <div class="nav-item" data-page="factures">
+                <i class="ri-file-list-3-line"></i> Factures
+            </div>
+            <div class="nav-item" data-page="comptabilite">
+                <i class="ri-calculator-line"></i> Comptabilité
+            </div>
+            <div class="nav-item" data-page="clients">
+                <i class="ri-group-line"></i> Clients
+            </div>
+            <div class="nav-item" data-page="produits">
+                <i class="ri-shopping-bag-3-line"></i> Produits
+            </div>
+        </nav>
+
+        <div class="nav-footer">
+            <div class="nav-item" data-page="settings">
+                <i class="ri-settings-4-line"></i> Paramètres
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main -->
+    <main class="main-content">
+
+        <!-- Dashboard -->
+        <section id="dashboard" class="page active">
+            <h2>Tableau de bord</h2>
+            <div class="card">📊 Chiffre d’affaires : <strong>124 500 MAD</strong></div>
+            <div class="card">🧾 Factures en attente : <strong>12</strong></div>
+        </section>
+
+        <!-- Factures -->
+        <section id="factures" class="page">
+            <h2>Gestion des factures</h2>
+            <div class="card">
+                <button class="btn">➕ Nouvelle facture</button>
+                <p>Liste des factures (à connecter à la base de données)</p>
+            </div>
+        </section>
+
+        <!-- Comptabilité -->
+        <section id="comptabilite" class="page">
+            <h2>Comptabilité</h2>
+            <div class="card">Plan comptable marocain</div>
+            <div class="card">Journaux comptables</div>
+        </section>
+
+        <!-- Clients -->
+        <section id="clients" class="page">
+            <h2>Clients</h2>
+            <div class="card">Liste des clients</div>
+        </section>
+
+        <!-- Produits -->
+        <section id="produits" class="page">
+            <h2>Produits & Services</h2>
+            <div class="card">Catalogue produits</div>
+        </section>
+
+        <!-- Settings -->
+        <section id="settings" class="page">
+            <h2>Paramètres</h2>
+            <div class="card">Informations société (ICE, IF, RC, TVA)</div>
+        </section>
+
+    </main>
+</div>
+
+<script>
+    const navItems = document.querySelectorAll('.nav-item');
+    const pages = document.querySelectorAll('.page');
+
+    navItems.forEach(item => {
+        item.addEventListener('click', () => {
+            navItems.forEach(i => i.classList.remove('active'));
+            pages.forEach(p => p.classList.remove('active'));
+
+            item.classList.add('active');
+            document.getElementById(item.dataset.page).classList.add('active');
+        });
+    });
+</script>
+
+</body>
+</html>
