@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tadbir Al Mohassaba - Dashboard</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet"/>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo-container">
+                <div class="logo-icon">
+                    <i class="ri-pie-chart-2-fill"></i>
+                </div>
+                <div class="logo-text">
+                    <h1>TADBIR</h1>
+                    <span>AL MOHASSABA</span>
+                </div>
+            </div>
+
+            <nav class="nav-menu">
+                <a href="#" class="nav-item active">
+                    <i class="ri-dashboard-line"></i>
+                    <span>Tableau de bord</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="ri-file-list-3-line"></i>
+                    <span>Factures</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="ri-calculator-line"></i>
+                    <span>Comptabilité</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="ri-group-line"></i>
+                    <span>Clients</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="ri-shopping-bag-3-line"></i>
+                    <span>Produits</span>
+                </a>
+            </nav>
+
+            <div class="nav-footer">
+                <a href="#" class="nav-item">
+                    <i class="ri-settings-4-line"></i>
+                    <span>Paramètres</span>
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="top-bar">
+                <div class="search-bar">
+                    <i class="ri-search-line"></i>
+                    <input type="text" placeholder="Rechercher...">
+                </div>
+                
+                <div class="user-actions">
+                    <button class="icon-btn">
+                        <i class="ri-notification-3-line"></i>
+                        <span class="badge"></span>
+                    </button>
+                    <div class="user-profile">
+                        <img src="https://ui-avatars.com/api/?name=Admin+User&background=0D8ABC&color=fff" alt="Profile">
+                        <span>Administrateur</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Content Area -->
+            <div class="content-wrapper">
+                <div class="page-header">
+                    <div>
+                        <h2>Tableau de bord</h2>
+                        <p class="subtitle">Bienvenue sur votre espace de gestion.</p>
+                    </div>
+                    <button class="btn-primary">
+                        <i class="ri-add-line"></i> Nouvelle Facture
+                    </button>
+                </div>
+
+                <!-- Stats Grid -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon income">
+                            <i class="ri-money-dollar-circle-line"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>Chiffre d'Affaires</h3>
+                            <p class="value">124,500 MAD</p>
+                            <span class="trend positive"><i class="ri-arrow-up-line"></i> +12% ce mois</span>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon expense">
+                            <i class="ri-funds-line"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>Dépenses</h3>
+                            <p class="value">42,300 MAD</p>
+                            <span class="trend negative"><i class="ri-arrow-down-line"></i> -5% ce mois</span>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon invoices">
+                            <i class="ri-file-paper-2-line"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>Factures en attente</h3>
+                            <p class="value">12</p>
+                            <span class="trend neutral">Pour 15,200 MAD</span>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon clients">
+                            <i class="ri-user-star-line"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>Nouveaux Clients</h3>
+                            <p class="value">+28</p>
+                            <span class="trend positive"><i class="ri-arrow-up-line"></i> +8% ce mois</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Activity Table -->
+                <div class="section-container">
+                    <div class="section-header">
+                        <h3>Factures Récentes</h3>
+                        <a href="#" class="view-all">Voir tout</a>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="custom-table">
+                            <thead>
+                                <tr>
+                                    <th>ID Facture</th>
+                                    <th>Client</th>
+                                    <th>Date</th>
+                                    <th>Montant</th>
+                                    <th>Statut</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>#INV-0089</td>
+                                    <td>
+                                        <div class="client-cell">
+                                            <div class="avatar">S</div>
+                                            <span>Société Alpha</span>
+                                        </div>
+                                    </td>
+                                    <td>24 Déc 2024</td>
+                                    <td>12,500 MAD</td>
+                                    <td><span class="status-badge paid">Payé</span></td>
+                                    <td><button class="action-btn"><i class="ri-more-2-fill"></i></button></td>
+                                </tr>
+                                <tr>
+                                    <td>#INV-0090</td>
+                                    <td>
+                                        <div class="client-cell">
+                                            <div class="avatar blue">G</div>
+                                            <span>Groupe Beta</span>
+                                        </div>
+                                    </td>
+                                    <td>23 Déc 2024</td>
+                                    <td>8,450 MAD</td>
+                                    <td><span class="status-badge pending">En attente</span></td>
+                                    <td><button class="action-btn"><i class="ri-more-2-fill"></i></button></td>
+                                </tr>
+                                <tr>
+                                    <td>#INV-0091</td>
+                                    <td>
+                                        <div class="client-cell">
+                                            <div class="avatar orange">T</div>
+                                            <span>Tech Solutions</span>
+                                        </div>
+                                    </td>
+                                    <td>22 Déc 2024</td>
+                                    <td>3,200 MAD</td>
+                                    <td><span class="status-badge overdue">En retard</span></td>
+                                    <td><button class="action-btn"><i class="ri-more-2-fill"></i></button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
